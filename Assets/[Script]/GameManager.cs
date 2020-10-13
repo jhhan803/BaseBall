@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System.Reflection;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int ballCount;
     public GameObject Canvas;
     public UI ui;
+    public Animator pitchanim;
 
     void Awake()
     {
@@ -18,9 +20,9 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        OrderThrow();
-        ballCount = 10;
         ui = Canvas.GetComponent<UI>();
+        ballCount = 10;
+        OrderThrow(); 
     }
     void Update()
     {
@@ -43,21 +45,36 @@ public class GameManager : MonoBehaviour
     }
     public void CallFoul()
     {
-        OrderThrow();
+       OrderThrow();
         ballCount -= 1;
+        ui.BallCount(ballCount);
         ui.PrintFoul();
     }
-    public void CallHit()
+    public void CallHit(float distance)
     {
         OrderThrow();
-        ui.PrintHit();
+        ui.PrintHit(distance);
     }
     void OrderThrow()
     {
-        StartCoroutine(PitchingMachine.GetComponent<PitchingMachine>().throwdelay());
+        /*
+        var assembly = Assembly.GetAssembly(typeof(UnityEditor.Editor));
+        var type = assembly.GetType("UnityEditor.LogEntries");
+        var method = type.GetMethod("Clear");
+        method.Invoke(new object(), null);
+        */
+        StartCoroutine(Delay());
+        if (ballCount > 0)
+        {
+            print("피칭");
+            pitchanim.SetTrigger("Pitch");
+            StartCoroutine(PitchingMachine.GetComponent<PitchingMachine>().Throwdelay());
+           
+        }
+
     }
-    IEnumerator FadeUI()
+    IEnumerator Delay()
     {
-        yield return null;
+        yield return new WaitForSeconds(3f);
     }
 }

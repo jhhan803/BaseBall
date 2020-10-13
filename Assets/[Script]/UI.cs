@@ -1,4 +1,5 @@
-﻿ using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +7,10 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     // Start is called before the first frame update
+    float maxDistance;
     void Start()
     {
-        
+        maxDistance = 0;
     }
 
     // Update is called once per frame
@@ -29,9 +31,15 @@ public class UI : MonoBehaviour
     {
         StartCoroutine(FandOut(transform.GetChild(3)));
     }
-    public void PrintHit()
+    public void PrintHit(float distance)
     {
         StartCoroutine(FandOut(transform.GetChild(4)));
+        transform.GetChild(7).GetComponent<Text>().text = "현재비거리:" + (Mathf.Round(distance * 10) * 0.1f).ToString()+"m";
+        if(distance>maxDistance)
+        {
+            maxDistance = distance;
+            transform.GetChild(8).GetComponent<Text>().text = "최대비거리:" + (Mathf.Round(distance * 10) * 0.1f).ToString() + "m";
+        }
     }
     public void PrintFoul()
     {
@@ -46,8 +54,9 @@ public class UI : MonoBehaviour
         while (t >= 0)
         {
             t -= Time.deltaTime*0.1f;
-            print(t);
+           // print(t);
            fade.transform.GetComponent<Image>().color = new Color(255, 255, 255, t);
+         //   yield return new WaitForSeconds(0.01f);
         }
         yield return null;
     }

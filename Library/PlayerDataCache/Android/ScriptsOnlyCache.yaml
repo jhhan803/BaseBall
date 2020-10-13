@@ -5,11 +5,24 @@ ScriptsOnlyBuild:
     - Bat
     - BatCapsule
     - BatCapsuleFollower
+    - CustomController
+    - GameManager
     - PitchingMachine
+    - Plane
+    - ReStart
+    - Target
+    - UI
     - VelocityDebugger
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     Unity.XR.Interaction.Toolkit.dll:
+    - UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
+    - UnityEngine.XR.Interaction.Toolkit.UI.XRUIInputModule
     - UnityEngine.XR.Interaction.Toolkit.XRController
     - UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable
     - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
@@ -25,12 +38,28 @@ ScriptsOnlyBuild:
     Unity.XR.Oculus.dll:
     - Unity.XR.Oculus.OculusLoader
     - Unity.XR.Oculus.OculusSettings
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.SpatialTracking.dll:
     - UnityEngine.SpatialTracking.TrackedPoseDriver
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/BaseBall.unity:
     - Class: 1
@@ -51,63 +80,127 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 75
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
     - Class: 95
+      Script: {instanceID: 0}
+    - Class: 96
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11604}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11786}
+      Script: {instanceID: 11344}
     - Class: 114
-      Script: {instanceID: 12044}
+      Script: {instanceID: 11396}
     - Class: 114
-      Script: {instanceID: 12424}
+      Script: {instanceID: 11448}
+    - Class: 114
+      Script: {instanceID: 11632}
+    - Class: 114
+      Script: {instanceID: 11758}
+    - Class: 114
+      Script: {instanceID: 11816}
+    - Class: 114
+      Script: {instanceID: 11826}
+    - Class: 114
+      Script: {instanceID: 11908}
+    - Class: 114
+      Script: {instanceID: 11940}
+    - Class: 114
+      Script: {instanceID: 11986}
+    - Class: 114
+      Script: {instanceID: 12076}
+    - Class: 114
+      Script: {instanceID: 12104}
+    - Class: 114
+      Script: {instanceID: 12196}
+    - Class: 114
+      Script: {instanceID: 12378}
+    - Class: 114
+      Script: {instanceID: 12458}
     - Class: 114
       Script: {instanceID: 12552}
     - Class: 114
+      Script: {instanceID: 12588}
+    - Class: 114
+      Script: {instanceID: 12640}
+    - Class: 114
+      Script: {instanceID: 12648}
+    - Class: 114
       Script: {instanceID: 12656}
     - Class: 114
-      Script: {instanceID: 12676}
+      Script: {instanceID: 12692}
     - Class: 114
-      Script: {instanceID: 12752}
+      Script: {instanceID: 12712}
     - Class: 114
-      Script: {instanceID: 12952}
+      Script: {instanceID: 12764}
     - Class: 114
-      Script: {instanceID: 13242}
+      Script: {instanceID: 12790}
     - Class: 114
-      Script: {instanceID: 13312}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 161608}
+      Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 317890}
+      Script: {instanceID: 13108}
+    - Class: 114
+      Script: {instanceID: 13278}
+    - Class: 114
+      Script: {instanceID: 13348}
+    - Class: 114
+      Script: {instanceID: 13354}
+    - Class: 114
+      Script: {instanceID: 363700}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 205
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -148,13 +241,19 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
+      Hash: bdf6fb0619a344968a3dc8a14b2d6e76
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Bat
+  - hash:
+      serializedVersion: 2
       Hash: 04e4a8b0447477cc4e933d9e5311188f
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
     className: ArmModel
   - hash:
       serializedVersion: 2
-      Hash: 88d4711e48ad7f838444e329fb4fdb3e
+      Hash: 185a62f1f7c3550f95e70d5c62b0901e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PitchingMachine
@@ -328,6 +427,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: d985accd1c6a6e776939fc5c912237af
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Target
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -344,6 +449,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 3da87ab99fa8e2d18876b94c6ba08466
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VelocityDebugger
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -394,6 +505,12 @@ ScriptsOnlyBuild:
     className: XRControllerRecorder
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UI
+  - hash:
+      serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -418,10 +535,10 @@ ScriptsOnlyBuild:
     className: XRControllerRecording
   - hash:
       serializedVersion: 2
-      Hash: e8b2359ca8f3370e4da6e94a7a191bb8
+      Hash: 9e9b9ddef9ca48eb0d5a73744ee3355e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: CustomController
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -478,6 +595,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: c2254f88c0715df52ad70dda6ea3f59b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CustomController
+  - hash:
+      serializedVersion: 2
       Hash: 9e45d69cbfe6ae6a396e0ca78f26a1e6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -532,7 +655,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 4106d929717710c0ec827c7f2a54d27a
+      Hash: 165e7d56707b9cbf03364e3bc568cb29
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ball
@@ -548,6 +671,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: TimelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Plane
   - hash:
       serializedVersion: 2
       Hash: f97c73485ace05715ab217e1fe7b1b92
@@ -736,16 +865,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 3da87ab99fa8e2d18876b94c6ba08466
+      Hash: 3a2593cace77f3f94504f82066c6bdcd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: VelocityDebugger
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Bat
+    className: ReStart
   platform: 13
   scenePathNames:
   - Assets/Scenes/BaseBall.unity

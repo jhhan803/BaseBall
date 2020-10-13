@@ -29,23 +29,33 @@ public class Plane : MonoBehaviour
     {
         if (collision.transform.tag == "ball")
         {
-            Vector3 ballVector = collision.transform.position - bases[0].position;
-
-            float Lsight = Vector3.Dot(bases[0].up, (Vector3.Cross(ballVector, LeftCheck)));
-            float Rsight = Vector3.Dot(bases[0].up, (Vector3.Cross(ballVector, RightCheck)));
-
-            float outCheck=Vector3.Dot(new Vector3(0, 0, 1f), ballVector);
-
-
-            if(Lsight<0&&Rsight<0&&outCheck>0)
+            if (collision.transform.GetComponent<Ball>().isHit)
             {
+                Vector3 ballVector = collision.transform.position - bases[0].position;
 
-                GameManager.instance.CallHit();//안타
+                float Lsight = Vector3.Dot(bases[0].up, (Vector3.Cross(ballVector, LeftCheck)));
+                float Rsight = Vector3.Dot(bases[0].up, (Vector3.Cross(ballVector, RightCheck)));
+
+                float outCheck = Vector3.Dot(new Vector3(0, 0, 1f), ballVector);
+
+
+                if (Lsight < 0 && Rsight > 0 && outCheck > 0)
+                {
+                    float distance = (bases[0].position - collision.transform.position).magnitude;
+                    GameManager.instance.CallHit(distance);//안타
+                    print("안타");
+                }
+                else
+                {
+                    GameManager.instance.CallFoul(); //아웃
+                    print("아웃");
+                }
             }
             else
             {
-                GameManager.instance.CallFoul(); //아웃
+                GameManager.instance.CallBall();
             }
+            Destroy(collision.gameObject);
             //공을 던져라
             //StartCoroutine(PitchingMachine.GetComponent<PitchingMachine>().throwdelay());
         }

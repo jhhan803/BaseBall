@@ -13,9 +13,9 @@ public class Bat : MonoBehaviour
     public GameObject hitEffect;
     void Start()
     {
-        hitspot = transform.GetChild(2);
-        Position1 = hitspot.position;
-        StartCoroutine(GetDVector());
+        //hitspot = transform.GetChild(2);
+        //Position1 = hitspot.position;
+        //StartCoroutine(GetDVector());
     }
 
     // Update is called once per frame
@@ -23,20 +23,22 @@ public class Bat : MonoBehaviour
     {  
 
     }
-    IEnumerator GetDVector()
-    {
-        Position2 = hitspot.position;
-        swingvector = Position2 - Position1;
-        yield return new WaitForSeconds(0.1f);
-        Position1 = hitspot.position;
-        StartCoroutine(GetDVector());
+    //IEnumerator GetDVector()
+    //{
+    //    Position2 = hitspot.position;
+    //    swingvector = Position2 - Position1;
+    //    yield return new WaitForSeconds(0.1f);
+    //    Position1 = hitspot.position;
+    //    StartCoroutine(GetDVector());
 
-    }
+    //}
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag=="ball")
         {
-            collision.transform.GetComponent<Rigidbody>().AddForce(swingvector);
+          //  collision.transform.GetComponent<Rigidbody>().AddForce(swingvector);
+            collision.transform.GetComponent<TrailRenderer>().enabled = true;
+            collision.transform.GetComponent<Ball>().isHit = true;
             GameObject hiteffect=Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(hiteffect, 1f);
         }
